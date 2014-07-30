@@ -24,7 +24,9 @@ read_file = open(in_file).readlines()
 
 
 # The stuff we want to match
-nameInProjPat = re.compile(r'(\s+NAME.*?|\s+FILE.*?)(\d+)(.*$)')
+# nameInProjPat = re.compile(r'(\s+NAME.*?|\s+FILE.*?)(\d+)(.*$)')
+nameInProjPat = re.compile(r'(\s+NAME.*?|\s+FILE.*\\.*?)(\d+)(.*\..*$)')
+#match as much stuff as possible until a slash=folder path and then as much stuff until a dot = file exietnsion
 
 # Do the IOps
 for file in range(0,iterations):
